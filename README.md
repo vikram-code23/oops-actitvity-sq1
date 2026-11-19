@@ -301,3 +301,5 @@ Linux Essentials by David [Available]
 ---
 
 *This activity was completed as a hands-on exercise to practice the fundamentals of Python Object-Oriented Programming.*
+
+*https://chatgpt.com/share/6aff3075-d68c-83ec-898b-96429bdd08ee*

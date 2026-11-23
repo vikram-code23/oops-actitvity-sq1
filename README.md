@@ -300,6 +300,191 @@ Linux Essentials by David [Available]
 
 ---
 
-*This activity was completed as a hands-on exercise to practice the fundamentals of Python Object-Oriented Programming.*
+---------------------------------------------------------------------------------------
 
-*https://chatgpt.com/share/6aff3075-d68c-83ec-898b-96429bdd08ee*
+
+#MACHINE LEARNING
+# ML-Based Addition Calculator Using Machine Learning
+
+## 1. Project Overview
+
+This project demonstrates how Machine Learning can be used to predict the sum of two numbers without directly using the `+` operator in the program.
+
+Instead of performing addition manually, we train a **Linear Regression model** using sample input numbers and their corresponding sums. Once trained, the model predicts the sum of new numbers provided by the user.
+
+## 2. Technologies Used
+
+- **Python 3.11** – Programming language
+- **NumPy** – To create and handle numerical datasets
+- **Scikit-learn** – To build and train the Machine Learning model
+- **Linear Regression** – ML algorithm used for prediction
+
+## 3. How Does It Work?
+
+The project works in the following steps:
+
+### Step 1: Import Libraries
+
+Import NumPy and Linear Regression from Scikit-learn.
+
+- NumPy helps organize numerical data into arrays.
+- Linear Regression is the Machine Learning algorithm used to learn the relationship between inputs and outputs.
+
+### Step 2: Create Training Data
+
+We provide sample pairs of numbers as input.
+
+Example:
+
+| First Number | Second Number | Expected Sum |
+|---|---|---|
+| 1 | 2 | 3 |
+| 2 | 3 | 5 |
+| 3 | 4 | 7 |
+| 10 | 20 | 30 |
+| 50 | 60 | 110 |
+| 100 | 200 | 300 |
+
+- `X` represents the input features (two numbers).
+- `y` represents the expected output (their sum).
+
+### Step 3: Create the ML Model
+
+We create a Linear Regression model using:
+
+`model = LinearRegression()`
+
+This creates the model that will learn the relationship between the input numbers and their corresponding sums.
+
+### Step 4: Train the Model
+
+We train the model using:
+
+`model.fit(X, y)`
+
+During training, the model learns a mathematical relationship between the two input numbers and the output.
+
+The model learns an equation similar to:
+
+`Predicted Sum = (Weight 1 × Number 1) + (Weight 2 × Number 2) + Intercept`
+
+Ideally, the learned weights are close to 1 and the intercept is close to 0.
+
+### Step 5: Get User Input
+
+The program asks the user to enter two numbers.
+
+Example:
+- First number: 400000
+- Second number: 1
+
+### Step 6: Prepare the Input
+
+The user-provided numbers are converted into a NumPy array.
+
+`new_input = np.array([[num1, num2]])`
+
+The double square brackets represent a two-dimensional input structure expected by Scikit-learn.
+
+### Step 7: Predict the Result
+
+We use:
+
+`prediction = model.predict(new_input)`
+
+The trained model uses the relationship it learned during training to predict the output for the new input.
+
+### Step 8: Display the Result
+
+Finally, the predicted result is displayed.
+
+Example:
+
+```text
+Enter first number: 400000
+Enter second number: 1
+
+Predicted Sum: 400001.0
+```
+
+## 4. Project Workflow
+
+```text
+        START
+          |
+          v
+    Import Libraries
+          |
+          v
+   Create Training Data
+       (X and y)
+          |
+          v
+   Create Linear Regression
+          |
+          v
+      Train the Model
+       (model.fit)
+          |
+          v
+   Get Two Numbers from User
+          |
+          v
+    Prepare Input Array
+          |
+          v
+     Model Prediction
+     (model.predict)
+          |
+          v
+    Display Predicted Sum
+          |
+          v
+         END
+```
+
+## 5. How Machine Learning Works in This Project
+
+```text
+       TRAINING PHASE
+              |
+              v
+     Sample Input Data (X)
+              |
+              v
+     Expected Output Data (y)
+              |
+              v
+       Linear Regression
+              |
+              v
+         Trained Model
+              |
+              |
+       PREDICTION PHASE
+              |
+              v
+      User Enters Two Numbers
+              |
+              v
+       Trained ML Model
+              |
+              v
+       Predicted Result
+```
+
+## 6. Key Learning Outcomes
+
+- Understood the basic concept of Machine Learning.
+- Learned the difference between training and prediction.
+- Understood how input features and target values are provided to an ML model.
+- Practiced using NumPy arrays.
+- Built and trained a Linear Regression model using Scikit-learn.
+- Understood how a trained model predicts outputs for new inputs.
+
+## 7. Important Note
+
+This is a beginner-level educational project created to understand the Machine Learning workflow.
+
+Linear Regression learns a mathematical pattern from the training data. It is not actually performing arithmetic like a normal calculator, and its predictions may not always be exact for every possible input.
+
